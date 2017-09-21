@@ -64,9 +64,9 @@
                                                     <constraint firstAttribute="width" constant="125" id="Soo-8x-Dkb"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="First"/>
-                                                    <segment title="Second"/>
-                                                    <segment title=""/>
+                                                    <segment title="15%"/>
+                                                    <segment title="18%"/>
+                                                    <segment title="20%"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
@@ -114,6 +114,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBJ-Ki-1os">
                                         <rect key="frame" x="0.0" y="178" width="275" height="30"/>
                                         <state key="normal" title="Calculate"/>
+                                        <connections>
+                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cDD-qI-GwN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -137,6 +140,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTextField" destination="Eld-NY-axh" id="TvB-lu-R8g"/>
+                        <outlet property="tipAmountTextField" destination="kyZ-7q-8Pv" id="1WS-lC-0Nw"/>
+                        <outlet property="tipSelector" destination="Oif-1D-VVh" id="jQN-sP-QAB"/>
+                        <outlet property="totalAmountTextField" destination="gDF-Tc-WMN" id="0bf-F3-pdu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
