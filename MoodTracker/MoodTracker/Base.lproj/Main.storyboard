@@ -6,13 +6,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Moody-->
+        <!--DisplayMoodTableViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DisplayMoodTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="DisplayMoodTableViewController" customClass="DisplayMoodTableViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0E8-ZF-Ae8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -52,6 +53,11 @@
                                         <constraint firstItem="HCK-PO-6Jn" firstAttribute="top" secondItem="fs0-Mr-D6s" secondAttribute="topMargin" constant="10" id="kAV-Gr-Fxq"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emojiLabel" destination="MRz-ha-fbz" id="aY5-3O-NHF"/>
+                                    <outlet property="nameTextField" destination="HCK-PO-6Jn" id="hpR-mU-Cqq"/>
+                                    <segue destination="qgw-8M-I6L" kind="show" identifier="chooseMood" id="tPs-q9-fdN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -62,6 +68,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="372" y="32.833583208395808"/>
+        </scene>
+        <!--ChooseMoodViewController-->
+        <scene sceneID="pX7-q3-17j">
+            <objects>
+                <viewController id="qgw-8M-I6L" userLabel="ChooseMoodViewController" customClass="ChooseMoodViewController" customModule="MoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Rs-4j-2nA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-CF-eFD">
+                                <rect key="frame" x="52" y="319" width="271" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="88p-Uk-OuY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="😁"/>
+                                    <segment title="😑"/>
+                                    <segment title="😡"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byp-iq-MHe">
+                                <rect key="frame" x="109" y="446" width="157" height="30"/>
+                                <color key="backgroundColor" red="0.15218401419600169" green="0.72411611125230602" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5LM-nm-Dlg"/>
+                                </constraints>
+                                <state key="normal" title="Save Mood">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-0K-I8W">
+                                <rect key="frame" x="52" y="162" width="271" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="Nlr-Mm-3QG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="byp-iq-MHe" firstAttribute="leading" secondItem="GcB-bf-Hqb" secondAttribute="leading" constant="109" id="FhD-Xh-dws"/>
+                            <constraint firstItem="byp-iq-MHe" firstAttribute="top" secondItem="ozw-CF-eFD" secondAttribute="bottom" constant="99" id="LGl-Rn-7dS"/>
+                            <constraint firstItem="GcB-bf-Hqb" firstAttribute="trailing" secondItem="ozw-CF-eFD" secondAttribute="trailing" constant="52" id="PbK-5I-Bq2"/>
+                            <constraint firstItem="ozw-CF-eFD" firstAttribute="leading" secondItem="GcB-bf-Hqb" secondAttribute="leading" constant="52" id="Uma-5u-bcY"/>
+                            <constraint firstItem="tM0-0K-I8W" firstAttribute="leading" secondItem="GcB-bf-Hqb" secondAttribute="leading" constant="52" id="VsC-OI-wld"/>
+                            <constraint firstItem="GcB-bf-Hqb" firstAttribute="trailing" secondItem="byp-iq-MHe" secondAttribute="trailing" constant="109" id="eSS-vo-aRx"/>
+                            <constraint firstItem="ozw-CF-eFD" firstAttribute="top" secondItem="tM0-0K-I8W" secondAttribute="bottom" constant="127" id="ozV-dt-yIw"/>
+                            <constraint firstItem="GcB-bf-Hqb" firstAttribute="trailing" secondItem="tM0-0K-I8W" secondAttribute="trailing" constant="52" id="wXc-cV-xrH"/>
+                            <constraint firstItem="tM0-0K-I8W" firstAttribute="top" secondItem="GcB-bf-Hqb" secondAttribute="top" constant="98" id="yfW-S1-0Ii"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GcB-bf-Hqb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Moody" id="7op-qH-CWT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYc-JG-pgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216.8" y="32.833583208395808"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IsH-Nd-7hg">

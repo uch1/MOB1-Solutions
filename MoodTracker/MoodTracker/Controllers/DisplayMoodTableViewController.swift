@@ -15,8 +15,21 @@ class DisplayMoodTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "displayMoodTableViewCell", for: indexPath)
-        cell.textLabel?.text = "OH"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "displayMoodTableViewCell", for: indexPath) as! DisplayMoodTableViewCell
+        cell.nameTextField.text = "Uchenna"
+        cell.emojiLabel.text = "😁"
         return cell 
     }
+    
+    // view ChooseMoodViewController by tapping on the + button or cell
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "chooseMood" {
+                print("Table view cell tapped")
+            } else if identifier == "addMood" {
+                print("+ button tapped")
+            }
+        }
+    }
+    
 }

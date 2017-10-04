@@ -9,6 +9,8 @@
 import UIKit
 
 class DisplayMoodTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emojiLabel: UILabel!
     
     
 }
