@@ -91,7 +91,11 @@ doesApply(a: 85436, b: 53893) {
 
 //5. Use `doesApply` to find out if the sums of the digits of `a` and `b` are the same (you can use the function `sumOfDigits` that is defined above for this task).
 
-
+doesApply(a: 85436, b: 53893) { a,b in
+    let firstValue = sumOfDigits(a: a)
+    let secondValue = sumOfDigits(a: b)
+    return firstValue == secondValue
+}
 
 //6. Write a function called `manipulateStrings` that returns an _optional_ `String` (so, the return type of the function is `String?`) and takes two `String`s as argument as well as another function that takes two `String`s and returns an _optional_ `String`.
 
