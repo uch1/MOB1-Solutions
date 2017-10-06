@@ -56,13 +56,17 @@
                                 <connections>
                                     <outlet property="emojiLabel" destination="MRz-ha-fbz" id="aY5-3O-NHF"/>
                                     <outlet property="nameTextField" destination="HCK-PO-6Jn" id="hpR-mU-Cqq"/>
-                                    <segue destination="qgw-8M-I6L" kind="show" identifier="chooseMood" id="tPs-q9-fdN"/>
+                                    <segue destination="qgw-8M-I6L" kind="show" identifier="chooseMoodSegue" id="tPs-q9-fdN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Moody" id="hD7-gt-SCd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SVs-mA-h7m"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SVs-mA-h7m">
+                            <connections>
+                                <segue destination="qgw-8M-I6L" kind="show" identifier="addMoodSegue" id="k0y-9v-TdL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -79,9 +83,6 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ozw-CF-eFD">
                                 <rect key="frame" x="52" y="319" width="271" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="272" id="88p-Uk-OuY"/>
-                                </constraints>
                                 <segments>
                                     <segment title="😁"/>
                                     <segment title="😑"/>
@@ -97,6 +98,9 @@
                                 <state key="normal" title="Save Mood">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveMood:" destination="qgw-8M-I6L" eventType="touchUpInside" id="iwt-kP-Mu7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-0K-I8W">
                                 <rect key="frame" x="52" y="162" width="271" height="30"/>
@@ -123,6 +127,10 @@
                         <viewLayoutGuide key="safeArea" id="GcB-bf-Hqb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Moody" id="7op-qH-CWT"/>
+                    <connections>
+                        <outlet property="addNameTextField" destination="tM0-0K-I8W" id="o4m-bp-nC8"/>
+                        <outlet property="emojiSelector" destination="ozw-CF-eFD" id="CNk-LS-hzQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYc-JG-pgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,4 +155,7 @@
             <point key="canvasLocation" x="-572" y="33"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tPs-q9-fdN"/>
+    </inferredMetricsTieBreakers>
 </document>

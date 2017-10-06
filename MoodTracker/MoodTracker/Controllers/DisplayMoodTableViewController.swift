@@ -24,9 +24,9 @@ class DisplayMoodTableViewController: UITableViewController {
     // view ChooseMoodViewController by tapping on the + button or cell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "chooseMood" {
+            if identifier == "chooseMoodSegue" {
                 print("Table view cell tapped")
-            } else if identifier == "addMood" {
+            } else if identifier == "addMoodSegue" {
                 print("+ button tapped")
             }
         }
