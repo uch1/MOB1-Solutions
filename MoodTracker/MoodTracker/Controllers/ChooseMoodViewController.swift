@@ -10,43 +10,79 @@ import UIKit
 
 // TODO:- Add a delegate to pass info from ChooseMoodVC to DisplayMoodTableVC
 protocol ShowMoodDelegate: class {
-    func didSelectMood(mood: String)
+    func addFriendsMood(friend: Friend)
+    func editFriendsMood(friend: Friend, row: Int)
 }
 
-class ChooseMoodViewController: UIViewController, ShowMoodDelegate {
-
+class ChooseMoodViewController: UIViewController, RowDelegate {
+    // MARK: PROPERTIES
     @IBOutlet weak var addNameTextField: UITextField!
     @IBOutlet weak var emojiSelector: UISegmentedControl!
     
-    weak var moodDelegate: ShowMoodDelegate?
+    var friend: Friend?
+    var row: Int?
+    
+    // MARK: DELEGATE
+    weak var delegate: ShowMoodDelegate?
+    
+    // MARK: METHODS
+    func pickAMood() {
+        switch self.friend!.mood {
+        case "😁":
+            emojiSelector.selectedSegmentIndex = 0
+        case "😑":
+            emojiSelector.selectedSegmentIndex = 1
+        case "😡":
+            emojiSelector.selectedSegmentIndex = 2
+        default:
+            break
+            //return
+        }
+    }
+    
+    // Conforms to RowDelegate protocol
+    func sendRow(friend: Friend, row: Int) {
+        self.friend = friend
+        self.row = row
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Once the emoji is selected, run pickAMood function
+        if self.friend != nil {
+            pickAMood()
+        }
     }
-
+    
+    // TODO: - review this code
+    @IBAction func saveMood(_ sender: UIButton) {
+        
+        if self.friend == nil {
+            guard let friendsName = addNameTextField.text, let friendsMood = emojiSelector.titleForSegment(at: emojiSelector.selectedSegmentIndex) else {return}
+            
+            let name = friendsName
+            let mood = friendsMood
+            
+            let friend = Friend(name: name, mood: mood)
+            
+            //Delegation for adding a friend's mood
+            delegate?.addFriendsMood(friend: friend)
+            
+        } else {
+            guard let friendsName = addNameTextField.text, let friendsMood = emojiSelector.titleForSegment(at: emojiSelector.selectedSegmentIndex) else {return}
+            
+            self.friend?.name = friendsName
+            self.friend?.mood = friendsMood
+            
+            // Delegation for editing a friend's mood
+            delegate?.editFriendsMood(friend: self.friend!, row: self.row!)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func saveMood(_ sender: UIButton) {
-        if let friendsName = addNameTextField?.text {
-            var emoji = ""
-            
-            switch emojiSelector.selectedSegmentIndex {
-            case 0:
-                emoji = "😁"
-            case 1:
-                emoji = "😑"
-            case 2:
-                emoji = "😡"
-            default:
-                break
-            }
-        }
-        
-        moodDelegate?.didSelectMood(mood: )
     }
     
 }

@@ -8,6 +8,12 @@
 
 import Foundation
 
-enum Mood {
+class Friend {
+    var name: String
+    var mood: String
     
+    init(name: String, mood: String) {
+        self.name = name
+        self.mood = mood 
+    }
 }
