@@ -18,7 +18,7 @@ class ChoosePokemonTableViewController: UITableViewController {
     weak var pokemonDelegate: PokemonDelegate?
     var pokemons: [Pokemon] = []
     var selectedPokemon: Pokemon?
-    
+    var name = "Pokemon"
     override func viewDidLoad() {
         super.viewDidLoad()
     }
