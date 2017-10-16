@@ -17,11 +17,13 @@ doLater { time in
 
 
 // Create typealias for ProductCallback
+typealias productName = (String) -> Void
 
 class Merchant {
     // Define ProductCallback / Means of communication
     
     init() {
+        
     }
     
     // Action we want to call the callback on
@@ -35,8 +37,8 @@ class Customer {
     // Handle Customer recieving merchant changes
 }
 
-let vendor = Vendor()
-let monger = Monger()
+let merchant = Merchant()
+let customer = Customer()
 
 // Set Callback
 
@@ -87,3 +89,9 @@ alertVC.addAction(alertAction)
 // Extra material to make this playground work
 PlaygroundPage.current.liveView = containerView
 PlaygroundPage.current.needsIndefiniteExecution = true
+
+
+
+
+
+
