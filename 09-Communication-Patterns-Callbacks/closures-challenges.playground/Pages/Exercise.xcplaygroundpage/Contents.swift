@@ -132,3 +132,5 @@ manipulateString(a: "abcdef", b: "ghijkl") {
     }
 }
 
+//operate(a: 2, b: 3, operation: +)
+//operate(a: 2, b: 3, operation: *)

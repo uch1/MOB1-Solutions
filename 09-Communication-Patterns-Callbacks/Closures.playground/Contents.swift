@@ -12,29 +12,28 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 func add(a: Int, b: Int) -> Int {
     return a + b
 }
+add(a: 2, b: 3)
 
+
+// 2) Closure add
 // function signature ->
 var closureAdd: (Int, Int) -> Int = { x, y in
     return x + y
 }
-
-add(a: 2, b: 3)
 closureAdd(2, 3)
-
-// 2) Closure add
-
 
 /*:
  ## 3) transformNumber, Extend capabilites of functions (used in many stdlib methods)
   Trailing closure syntax
   Closures can capture values
 */
+
 func transformNumber(a: Int, operand: (Int) -> Int) -> Int {
     return operand(a)
 }
 
-func divideBy2(b: Int) -> Int {
-    return b/2
+func divideBy2(a: Int) -> Int {
+    return a/2
 }
 
 transformNumber(a: 4, operand: divideBy2)
@@ -42,7 +41,7 @@ transformNumber(a: 4, operand: { (a: Int) -> Int in
     return  a * 2
 })
 
-transformNumber(a: 3, operand: { $0 * 3 } )
+transformNumber(a: 3, operand: { $0 * 1 } )
 transformNumber(a: 3) { (x: Int) -> Int in
     return x / 2
 }
