@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--Choose Cartoon Table View Controller-->
+        <!--Choose Cartoon View Controller-->
         <scene sceneID="eM8-f2-YJQ">
             <objects>
-                <viewController storyboardIdentifier="ChooseCartoonViewController" id="rQY-DO-a8M" customClass="ChooseCartoonTableViewController" customModule="Cartoony" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCartoonViewController" id="rQY-DO-a8M" customClass="ChooseCartoonViewController" customModule="Cartoony" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7op-fV-8xa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="rQY-DO-a8M" id="zPh-eg-Tt7"/>
                                     <outlet property="delegate" destination="rQY-DO-a8M" id="dy2-ZH-OCJ"/>
+                                    <outlet property="prefetchDataSource" destination="rQY-DO-a8M" id="V7Q-Vk-83t"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -123,10 +124,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6t9-Bz-GSs"/>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="3u7-KX-d27" id="O8Q-O9-Cvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ql-aw-kJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="134"/>
+            <point key="canvasLocation" x="1304.8" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uH2-rw-37J">

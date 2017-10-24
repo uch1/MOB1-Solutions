@@ -49,7 +49,7 @@ class GuessCartoonViewController: UIViewController, CartoonDelegate {
     func goToChooseCartoonTableViewContoller() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let chooseCartoonController = storyboard.instantiateViewController(withIdentifier: "ChooseCartoonViewController") as! ChooseCartoonTableViewController
+        let chooseCartoonController = storyboard.instantiateViewController(withIdentifier: "ChooseCartoonViewController") as! ChooseCartoonViewController
         
         chooseCartoonController.cartoons = GuessCartoonViewController.cartoons
         

@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802AEFD41F9EE6AE003CE57B /* ChooseCartoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AEFD31F9EE6AE003CE57B /* ChooseCartoonViewController.swift */; };
 		80442A641F9D959E002E2972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80442A631F9D959E002E2972 /* AppDelegate.swift */; };
 		80442A691F9D959E002E2972 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80442A671F9D959E002E2972 /* Main.storyboard */; };
 		80442A6B1F9D959E002E2972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80442A6A1F9D959E002E2972 /* Assets.xcassets */; };
 		80442A6E1F9D959E002E2972 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80442A6C1F9D959E002E2972 /* LaunchScreen.storyboard */; };
 		80442A7A1F9D96CA002E2972 /* Cartoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80442A791F9D96CA002E2972 /* Cartoon.swift */; };
-		80442A7C1F9D983F002E2972 /* ChooseCartoonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80442A7B1F9D983F002E2972 /* ChooseCartoonTableViewController.swift */; };
 		80442A7E1F9DA5AC002E2972 /* GuessCartoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80442A7D1F9DA5AC002E2972 /* GuessCartoonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802AEFD31F9EE6AE003CE57B /* ChooseCartoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCartoonViewController.swift; sourceTree = "<group>"; };
 		80442A601F9D959E002E2972 /* Cartoony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartoony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80442A631F9D959E002E2972 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80442A681F9D959E002E2972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		80442A6D1F9D959E002E2972 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80442A6F1F9D959E002E2972 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80442A791F9D96CA002E2972 /* Cartoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoon.swift; sourceTree = "<group>"; };
-		80442A7B1F9D983F002E2972 /* ChooseCartoonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCartoonTableViewController.swift; sourceTree = "<group>"; };
 		80442A7D1F9DA5AC002E2972 /* GuessCartoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCartoonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +65,7 @@
 				80442A6F1F9D959E002E2972 /* Info.plist */,
 				80442A791F9D96CA002E2972 /* Cartoon.swift */,
 				80442A7D1F9DA5AC002E2972 /* GuessCartoonViewController.swift */,
-				80442A7B1F9D983F002E2972 /* ChooseCartoonTableViewController.swift */,
+				802AEFD31F9EE6AE003CE57B /* ChooseCartoonViewController.swift */,
 			);
 			path = Cartoony;
 			sourceTree = "<group>";
@@ -144,8 +144,8 @@
 			files = (
 				80442A7A1F9D96CA002E2972 /* Cartoon.swift in Sources */,
 				80442A641F9D959E002E2972 /* AppDelegate.swift in Sources */,
+				802AEFD41F9EE6AE003CE57B /* ChooseCartoonViewController.swift in Sources */,
 				80442A7E1F9DA5AC002E2972 /* GuessCartoonViewController.swift in Sources */,
-				80442A7C1F9D983F002E2972 /* ChooseCartoonTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
