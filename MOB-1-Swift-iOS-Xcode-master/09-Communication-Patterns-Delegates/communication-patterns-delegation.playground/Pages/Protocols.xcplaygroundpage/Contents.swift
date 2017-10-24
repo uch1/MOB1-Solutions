@@ -208,11 +208,46 @@ describe(item: Ostrich())
  
  2.
  */
+<<<<<<< HEAD
 
+=======
+// 1.
+protocol Car {
+    var maxSpeed: Int {get}
+    var numberOfWheels: Int {get}
+    var numberOfDoors: Int {get}
+    var model: String {get}
+   
+}
+
+struct Truck: Car {
+    var maxSpeed: Int
+    var numberOfWheels: Int
+    var numberOfDoors: Int
+    var model: String
+}
+
+struct Motocycle: Car {
+    var maxSpeed: Int
+    var numberOfWheels: Int
+    var numberOfDoors: Int
+    var model: String
+}
+
+struct Bus: Car {
+    var maxSpeed: Int
+    var numberOfWheels: Int
+    var numberOfDoors: Int
+    var model: String
+}
+
+//2.
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
  protocol CanMakeNoise {
     func makeNoise()
  }
  
+<<<<<<< HEAD
  class Elephant {
  
  }
@@ -232,6 +267,35 @@ describe(item: Ostrich())
  
  // let arrayOfNoiseMaker: [CanMakeNoise] = [human, pig, cow]
 
+=======
+class Elephant: CanMakeNoise {
+    func makeNoise() {
+        print("AHHH")
+    }
+ }
+ 
+class Pig: CanMakeNoise {
+    func makeNoise() {
+        print("WIIII")
+    }
+ }
+ 
+class Cow: CanMakeNoise {
+    func makeNoise() {
+        print("BOOOO")
+    }
+ }
+ 
+let elephant = Elephant()
+let pig = Pig()
+let cow = Cow()
+
+let arrayOfNoiseMaker: [CanMakeNoise] = [elephant, pig, cow]
+
+for animal in arrayOfNoiseMaker {
+   print(animal.makeNoise())
+}
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
 
 /*:
  
@@ -278,17 +342,39 @@ enum Style: String {
     case popArt
 }
 
+<<<<<<< HEAD
 struct Artist {
+=======
+struct Artist: Equatable {
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
     let name: String
     let style: Style
     let yearBorn: Int
 }
 
+<<<<<<< HEAD
+=======
+extension Artist {
+    static func ==(lhs: Artist, rhs: Artist) -> Bool {
+        return
+            lhs.name == rhs.name &&
+            lhs.style == rhs.style &&
+            lhs.yearBorn == rhs.yearBorn
+    }
+}
+
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
 // Example instances of Artists, use for testing your equatable
 let monet = Artist(name: "monet", style: .impressionism, yearBorn: 1840)
 let dali = Artist(name: "Salvador Dali", style: .surrealism, yearBorn: 1904)
 let andy = Artist(name: "Andy Warhol", style: .popArt, yearBorn: 1928)
 
+<<<<<<< HEAD
+=======
+monet.name == dali.name
+andy.name == dali.name
+andy.name == andy.name
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
 
 /*:
  
@@ -301,7 +387,11 @@ let andy = Artist(name: "Andy Warhol", style: .popArt, yearBorn: 1928)
  
  
 */
+<<<<<<< HEAD
 
+=======
+var twoDimensionalArray = [[2,5,9], [0, 4, 2], [6, 8, 3]]
+>>>>>>> 74bd8e8143312c5cfd45c9be4995aae340e41a43
 
 
 //: [Next](@next)

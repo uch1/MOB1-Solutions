@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name " borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCK-PO-6Jn" userLabel="nameTextField">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ADD NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCK-PO-6Jn" userLabel="nameTextField">
                                             <rect key="frame" x="8" y="18" width="223" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="223" id="Ybi-0U-W1a"/>
@@ -105,7 +105,7 @@
                                     <action selector="saveMood:" destination="qgw-8M-I6L" eventType="touchUpInside" id="iwt-kP-Mu7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-0K-I8W">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add name " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-0K-I8W">
                                 <rect key="frame" x="52" y="162" width="271" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="272" id="Nlr-Mm-3QG"/>

@@ -3,7 +3,7 @@ import PlaygroundSupport
 
 /*:
  # Delegation
- 
+
  Delegation is one of many communication patterns used in iOS to distribute information.
  Delegation is one-to-one, which means that only two participants can engage in delegation
  */
@@ -28,6 +28,7 @@ protocol BusStopDelegate: class {
 class Bus {
     var name: String = "Market & 6th  Bus"
     
+    // BusStopDelegate/Supporter | doesn't conform
     weak var delegate: BusStopDelegate?
     
     func takeOff() {
@@ -62,11 +63,48 @@ bus.reachedDestination()
 
 //: Lets take a look at how this looks like in a diagram
 
-
 //: ![Delegation](delegation.png)
 
 
 //: [Next Topic](@next)
+// Delegations
+protocol AssignWorkDelegate: class {
+    func assignWork(task: String)
+    func assignDeadline(date: String)
+}
 
+class CEO {
+    var work: String = "Here's the task for the day"
+    
+    //Supporter/Assistant/Delegate
+    weak var delegate: AssignWorkDelegate?
+    
+    //Assistant explains the task to the intern
+    func giveTask() {
+        delegate?.assignWork(task: "Fix the UI designs and home button")
+    }
+    
+    func giveDeadline() {
+        delegate?.assignDeadline(date: "This should be completed by Friday at 9pm")
+    }
+}
 
+class Intern: AssignWorkDelegate {
+    // Assistant assign the task and deadline for the intern
+    func assignWork(task: String) {
+        print("Today's task: \(task)")
+    }
+    
+    func assignDeadline(from date: String) {
+        print("Deadline: \(date)")
+    }
+}
 
+let ceo = CEO()
+let intern = Intern()
+
+// Assistant communicates with the CEO after assigning a task for the intern
+// Intern conforms the Assistant(AssignWorkDelegate)
+ceo.delegate = intern
+ceo.giveTask()
+ceo.giveDeadline()

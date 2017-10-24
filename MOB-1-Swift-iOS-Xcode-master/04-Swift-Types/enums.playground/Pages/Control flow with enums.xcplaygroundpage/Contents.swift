@@ -35,9 +35,12 @@ enum FirstQuarterTechnicalCourse {
 
 // creating enum values requires an explicit type annonation of the enum's type
 let course1 = FirstQuarterTechnicalCourse.python
-let course2: FirstQuarterTechnicalCourse = .frontend
+let course2 = FirstQuarterTechnicalCourse.frontend
+let course3 = FirstQuarterTechnicalCourse.ruby
+let course4 = FirstQuarterTechnicalCourse.ios_advanced
+let course5 = FirstQuarterTechnicalCourse.ios_accelerated
 //var w3 = .ruby // doesn't work because the compiler doesn't know the enum type
-
+var w3: FirstQuarterTechnicalCourse = .ruby
 // you can do regular comparisons with enums using if:
 if course1 == course2 {
   print("these two are the same")
@@ -50,24 +53,35 @@ else {
 func getCourseName(course: FirstQuarterTechnicalCourse) -> String {
   var courseName: String
   switch course {
-  case .python: courseName = "Back-end Web: API Services with Python & Flask"
-  case .frontend: courseName = "Front-end Web: Interactive Websites with JavaScript"
-  case .ruby: courseName = "Full-stack development with Ruby"
-  case .ios_advanced: courseName = "Advanced Topics in iOS & Swift"
-  case .ios_accelerated: courseName = "Mobile Apps with iOS & Swift"
+  case .python:
+    courseName = "Back-end Web: API Services with Python & Flask"
+  case .frontend:
+    courseName = "Front-end Web: Interactive Websites with JavaScript"
+  case .ruby:
+    courseName = "Full-stack development with Ruby"
+  case .ios_advanced:
+    courseName = "Advanced Topics in iOS & Swift"
+  case .ios_accelerated:
+    courseName = "Mobile Apps with iOS & Swift"
   }
   return courseName
 }
 
 let courseNameForCourse1 = getCourseName(course: course1)
 print("The course is called: \(courseNameForCourse1)")
+let courseNameForCourse2 = getCourseName(course: course2)
+print("The course is called: \(courseNameForCourse2)")
+let courseNameForCourse3 = getCourseName(course: course3)
+print("The course is called: \(courseNameForCourse3)")
 
 // switch statements can also bundle multiple cases
 func getCourseType(course: FirstQuarterTechnicalCourse) -> String {
   var courseType: String
   switch course {
-    case .python, .frontend, .ruby: courseType = "Web"
-    case .ios_accelerated, .ios_advanced: courseType = "Mobile"
+    case .python, .frontend, .ruby:
+        courseType = "Web"
+    case .ios_accelerated, .ios_advanced:
+        courseType = "Mobile"
   }
   return courseType
 }
@@ -92,6 +106,37 @@ print("The course is a mobile course: \(isMobile)")
  2. Write a function called `getWeekdayName` that takes a `Weekday` returns the name of each weekday as a `String`, e.g.: `"This weekday is called Sunday."`
  3. Write a function called `isItFinallyWeekend` that takes a `Weekday` and returns a `String` indicating whether the argument is a weekend weekday, e.g.: `"Monday is a regular workday."` or `"Wuhuuuu, it's SATURDAYYYYYYYY."`
  */
+//enum Weekday {
+//    case monday
+//    case tuesday
+//    case wednesday
+//    case thursday
+//    case friday
+//    case saturday
+//    case sunday
+//}
 
-
+//func getWeekdayName(weekday: Weekday) -> String {
+//    var weekdayName: String
+//    switch weekday {
+//    case .monday: weekdayName = "Monday"
+//    case .tuesday: weekdayName = "Tuesday"
+//    case .wednesday: weekdayName = "Wednesday"
+//    case .thursday: weekdayName = "Thursday"
+//    case .friday: weekdayName = "Friday"
+//    default: break
+//    }
+//    return "This weekday is called \(weekday)"
+//}
+//
+//func isItFinallyWeekend(weekday: Weekday) -> String {
+//    var workday: String
+//    switch weekday {
+//    case .monday, .tuesday, .wednesday, .thursday, .friday:
+//        workday = "\(weekday) is a workday."
+//    case .saturday, .sunday:
+//        workday = "yuhh, it's \(weekday)"
+//    }
+//    return workday
+//}
 
